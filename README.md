@@ -8,3 +8,6 @@ Integridad
 Confidencialidad
 
 Se considera que con que uno de ellos sea alto la base de datos tendra una criticidad alta ya que la asuencia de alguno podria generar un incidente de seguridad de la infromacion.
+
+Aclaracion sobre la falta de infromacion:
+Si este aplicativo fuese utilizado en una corporacion que posee Active Directory o algun explorador de cliente como Softerra LDAP Administrator, lo utilizaria para realizar la consulta del email del colaborador.
