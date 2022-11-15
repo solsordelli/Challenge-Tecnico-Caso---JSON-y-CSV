@@ -80,13 +80,13 @@ for line in content:
  #Para cada elemento en elCSV, usando la info del json, verifico Si alguna base de datos es high, buscamos el manager y enviamos mail a manager
     for elemento in content_dict:
         for registro in data ["db_list"]:
+                baseDeDatos=(registro["dn_name"])
+                confidencialidad = (registro["classification"]["confidentiality"])
+                integridad = (registro["classification"]["integrity"])
+                disponibilidad=(registro["classification"]["availability"])
+                owner=(registro["owner"]["name"])
                 if registro["owner"]["email"]==""or registro["email"]=="":
                     with smtplib.SMTP_SSL("smtp.gmail.com", 465,context=context) as smtp:
-                        integridad = (registro["classification"]["integrity"])
-                        disponibilidad=(registro["classification"]["availability"])
-                        confidencialidad = (registro["classification"]["confidentiality"])
-                        owner=(registro["owner"]["name"])
-                        baseDeDatos=(registro["dn_name"])
                         subject=("IMPORTANTE: Falta de informacion sobre Base de datos")
                         body=("""
 Hola, que tal?
@@ -109,11 +109,6 @@ Saludos
            
                 if registro["classification"]["confidentiality"]=="" or registro["classification"]["integrity"]=="" or registro["classification"]["availability"]=="":
                     with smtplib.SMTP_SSL("smtp.gmail.com", 465,context=context) as smtp:
-                        integridad = (registro["classification"]["integrity"])
-                        disponibilidad=(registro["classification"]["availability"])
-                        confidencialidad = (registro["classification"]["confidentiality"])
-                        owner=(registro["owner"]["name"])
-                        baseDeDatos=(registro["dn_name"])
                         subject=("IMPORTANTE: Falta de informacion sobre Base de datos")
                         body=("""
 Hola, que tal?
@@ -137,10 +132,6 @@ Saludos
         if registro["classification"]["confidentiality"]=="high" or registro["classification"]["integrity"]=="high" or registro["classification"]["availability"]=="high":
             if elemento ["user_id"] == registro["owner"]["uid"] and elemento["user_state"] == "activo": #Verificamos la info y si el usuario esta activo
                 with smtplib.SMTP_SSL("smtp.gmail.com", 465,context=context) as smtp:
-                    baseDeDatos=(registro["dn_name"])
-                    confidencialidad = (registro["classification"]["confidentiality"])
-                    integridad = (registro["classification"]["integrity"])
-                    disponibilidad=(registro["classification"]["availability"])
                     subject=("IMPORTANTE: Consulta criticidad Base de datos: {baseDeDatos}".format(baseDeDatos=baseDeDatos))
                     body=("""
 Hola, que tal?
