@@ -9,5 +9,10 @@ Confidencialidad
 
 Se considera que con que uno de ellos sea alto la base de datos tendra una criticidad alta ya que la asuencia de alguno podria generar un incidente de seguridad de la infromacion.
 
+Objetivo:
+Generar un programa que, a partir de los archivos dados, por cada registro guardado, en donde la clasificación sea alta (high), envíe un email al manager del owner pidiendo su OK respecto de la clasificación.
+
+
 Aclaracion sobre la falta de infromacion:
 Si este aplicativo fuese utilizado en una corporacion que posee Active Directory o algun explorador de cliente como Softerra LDAP Administrator, lo utilizaria para realizar la consulta del email del colaborador.
+Sin embargo, se opto por consultar los datos faltantes a quien se considere necesario.
