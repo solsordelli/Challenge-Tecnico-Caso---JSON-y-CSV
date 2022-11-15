@@ -58,7 +58,7 @@ Saludos
         print("\nNombre de la Data Base: {}".format(registro["dn_name"]))
 
 #ENVIO DE CORREO ELECTRONICO SEGUN CRITICIDAD
-#Para cada elemento en el CSV, usando la info del json, verifico Si alguna base de datos es high, buscamos el manager y enviamos mail a manager
+
 path ="user_manager - user_manager.csv"
 content_dict = [] #Imprimo el contenido del CSV como una lista
 
